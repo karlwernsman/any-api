@@ -5,6 +5,7 @@ const request = require('supertest');
 const app = require('../lib/app');
 
 const { darias } = require('../lib/daria-data.js');
+const { koths } = require('../lib/koth-data');
 
 // describe('backend-express-template routes', () => {
 //   beforeEach(() => {
@@ -45,6 +46,25 @@ describe('daria routes', () => {
     expect(res.body).toEqual(daria);
   });
 
+  // afterAll(() => {
+  //   pool.end();
+  // });
+});
+
+describe('king of the hill routes', () => {
+  beforeEach(() => {
+    return setup(pool);
+  });
+  it('/koths should return a list of characters', async () => {
+    const res = await request(app).get('/koths');
+    const expected = koths.map((koth) => {
+      return {
+        id: koth.id,
+        first_name: koth.first_name,
+      };
+    });
+    expect(res.body).toEqual(expected);
+  });
   afterAll(() => {
     pool.end();
   });
