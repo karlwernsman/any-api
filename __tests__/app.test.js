@@ -65,6 +65,19 @@ describe('king of the hill routes', () => {
     });
     expect(res.body).toEqual(expected);
   });
+
+  it('/koths/:id should return character detail', async () => {
+    const res = await request(app).get('/koths/1');
+    const bill = {
+      id: '1',
+      first_name: 'Bill',
+      last_name: 'Dauterive',
+      url: 'https://www.giantbomb.com/a/uploads/scale_small/0/7383/1812907-bill.jpg',
+      age: 45,
+    };
+    expect(res.body).toEqual(bill);
+  });
+
   afterAll(() => {
     pool.end();
   });
