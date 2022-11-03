@@ -7,7 +7,7 @@ CREATE TABLE daria_characters (
   first_name VARCHAR NOT NULL,
   last_name VARCHAR NOT NULL,
   url VARCHAR NOT NULL,
-  episode_count INT NOT NULL,
+  episode_count INT NOT NULL
 );
 
 INSERT INTO daria_characters (first_name, last_name, url, episode_count)
@@ -19,4 +19,4 @@ VALUES
 ('Helen', 'Morgendorffer', 'https://static.wikia.nocookie.net/daria/images/3/37/Helencropped.png/revision/latest?cb=20211119012422', 63),
 ('Brittany', 'Taylor', 'https://static.wikia.nocookie.net/daria/images/9/9b/Brittany-colbor.png/revision/latest?cb=20190518195307', 54),
 ('Kevin', 'Thompson', 'https://static.wikia.nocookie.net/daria/images/6/65/Kevin_Thompson.jpg/revision/latest?cb=20080625001956', 53),
-('Stacy', 'Rowe', 'https://static.wikia.nocookie.net/daria/images/0/04/D3923470-BAAD-46D0-A7EC-A00D4FC6B1BA.jpeg/revision/latest/scale-to-width-down/1000?cb=20181009144717', 41),
+('Stacy', 'Rowe', 'https://static.wikia.nocookie.net/daria/images/0/04/D3923470-BAAD-46D0-A7EC-A00D4FC6B1BA.jpeg/revision/latest/scale-to-width-down/1000?cb=20181009144717', 41);

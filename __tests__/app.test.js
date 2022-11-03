@@ -25,7 +25,10 @@ describe('daria routes', () => {
   it('/darias should return a list of characters', async () => {
     const res = await request(app).get('/darias');
     const expected = darias.map((daria) => {
-      return { id: daria.id, name: daria.first_name };
+      return {
+        id: daria.id,
+        first_name: daria.first_name,
+      };
     });
     expect(res.body).toEqual(expected);
   });
